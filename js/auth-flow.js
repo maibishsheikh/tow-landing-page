@@ -34,13 +34,23 @@
     currentPath === LEGACY_GAME_PATH ||
     document.body.dataset.protectedGame === 'true';
 
-  const goToLogin = () => {
+  const getSafeNext = () => {
+    const requested = new URLSearchParams(window.location.search).get('next');
+    return requested === GAME_PATH ? GAME_PATH : '/';
+  };
+
+  const goToLogin = ({ next = '/' } = {}) => {
     const loginUrl = new URL(LOGIN_PATH, window.location.origin);
-    loginUrl.searchParams.set('next', GAME_PATH);
+    if (next === GAME_PATH) loginUrl.searchParams.set('next', GAME_PATH);
     window.location.assign(loginUrl.href);
   };
 
   const goToGame = () => window.location.assign(GAME_URL);
+
+  const redirectAfterAuth = () => {
+    if (getSafeNext() === GAME_PATH) goToGame();
+    else window.location.assign('/');
+  };
 
   const updateAuthControls = (user) => {
     document.querySelectorAll('#openLoginBtn, #mobileLoginBtn').forEach((control) => {
@@ -70,13 +80,13 @@
     }
 
     if (!auth) {
-      goToLogin();
+      goToLogin({ next: GAME_PATH });
       return;
     }
 
     const user = auth.currentUser || await waitForUser();
     if (user) goToGame();
-    else goToLogin();
+    else goToLogin({ next: GAME_PATH });
   };
 
   const isGameLink = (anchor) => {
@@ -153,7 +163,7 @@
     renderLoginState({ message: 'Checking your Firebase session...' });
     auth.onAuthStateChanged((user) => {
       if (user) {
-        goToGame();
+        redirectAfterAuth();
         return;
       }
       renderLoginState({ message: document.body.dataset.authMode === 'signup' ? 'Create your account to enter the game.' : 'Log in to continue to the game.' });
@@ -207,13 +217,13 @@
     if (!isProtectedGamePage) return;
 
     if (!auth) {
-      goToLogin();
+      goToLogin({ next: GAME_PATH });
       return;
     }
 
     auth.onAuthStateChanged((user) => {
       if (!user) {
-        goToLogin();
+        goToLogin({ next: GAME_PATH });
         return;
       }
 
