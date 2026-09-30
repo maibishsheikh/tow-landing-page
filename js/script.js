@@ -7,6 +7,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
+  // Payment and enrollment are paused. Remove their controls from the DOM so
+  // they cannot be triggered even if the stylesheet is bypassed.
+  document.querySelectorAll(
+    '#enrollModal, #pricing, #headerEnrollBtn, #mobileEnrollBtn, #finalEnrollBtn, #finalPageEnrollBtn, #pricingCtaEnroll, #quizToEnrollBtn'
+  ).forEach((element) => element.remove());
+
   /* ==========================================================================
      1. STICKY NAVBAR & MOBILE MENU
      ========================================================================== */

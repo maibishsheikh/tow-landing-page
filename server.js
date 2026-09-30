@@ -32,16 +32,19 @@ app.use(express.static(path.join(__dirname)));
 const keyId = process.env.RAZORPAY_KEY_ID || '';
 const keySecret = process.env.RAZORPAY_KEY_SECRET || '';
 const webhookSecret = process.env.RAZORPAY_WEBHOOK_SECRET || '';
+const paymentsEnabled = process.env.PAYMENTS_ENABLED === 'true';
 
 let razorpay = null;
-if (keyId && keySecret && !keyId.includes('YOUR_KEY_ID')) {
+if (paymentsEnabled && keyId && keySecret && !keyId.includes('YOUR_KEY_ID')) {
   razorpay = new Razorpay({
     key_id: keyId,
     key_secret: keySecret
   });
   console.log('✓ Razorpay SDK initialized successfully with Key ID:', keyId);
 } else {
-  console.warn('⚠️ Razorpay credentials not yet set in .env file. Running in configuration mode.');
+  console.warn(paymentsEnabled
+    ? '⚠️ Razorpay credentials not yet set in .env file. Running in configuration mode.'
+    : 'ℹ️ Payment APIs are disabled (PAYMENTS_ENABLED=false).');
 }
 
 /**
@@ -50,7 +53,8 @@ if (keyId && keySecret && !keyId.includes('YOUR_KEY_ID')) {
 app.get('/api/status', (req, res) => {
   res.json({
     status: 'online',
-    isConfigured: !!(keyId && keySecret && !keyId.includes('YOUR_KEY_ID')),
+    paymentsEnabled,
+    isConfigured: paymentsEnabled && !!(keyId && keySecret && !keyId.includes('YOUR_KEY_ID')),
     mode: process.env.PAYMENT_MODE || 'test',
     keyId: keyId ? `${keyId.substring(0, 10)}...` : 'not_set'
   });
@@ -62,6 +66,10 @@ app.get('/api/status', (req, res) => {
  */
 app.post('/api/create-order', async (req, res) => {
   try {
+    if (!paymentsEnabled) {
+      return res.status(410).json({ error: 'Payments are temporarily disabled.' });
+    }
+
     if (!razorpay) {
       return res.status(500).json({
         error: 'Razorpay keys are not configured yet in .env file',
@@ -108,6 +116,10 @@ app.post('/api/create-order', async (req, res) => {
  */
 app.post('/api/verify-payment', (req, res) => {
   try {
+    if (!paymentsEnabled) {
+      return res.status(410).json({ error: 'Payments are temporarily disabled.' });
+    }
+
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature, studentName, grade } = req.body;
 
     if (!keySecret) {
@@ -149,6 +161,10 @@ app.post('/api/verify-payment', (req, res) => {
  */
 app.post('/api/webhook', (req, res) => {
   try {
+    if (!paymentsEnabled) {
+      return res.status(410).json({ error: 'Payments are temporarily disabled.' });
+    }
+
     const signature = req.headers['x-razorpay-signature'];
     
     if (webhookSecret && signature) {

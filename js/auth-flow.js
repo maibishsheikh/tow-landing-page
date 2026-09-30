@@ -5,6 +5,7 @@
 
   const LOGIN_PATH = '/login';
   const GAME_PATH = '/game';
+  const GAME_URL = 'https://tug-of-war-hazel.vercel.app/';
   const LEGACY_GAME_PATH = '/tug-of-war.html';
   const EXTERNAL_GAME_HOST = 'tug-of-war-hazel.vercel.app';
   const config = window.FIREBASE_CONFIG || {};
@@ -33,18 +34,21 @@
     currentPath === LEGACY_GAME_PATH ||
     document.body.dataset.protectedGame === 'true';
 
-  const getSafeNext = () => {
-    const requested = new URLSearchParams(window.location.search).get('next');
-    return requested === GAME_PATH ? requested : GAME_PATH;
-  };
-
   const goToLogin = () => {
     const loginUrl = new URL(LOGIN_PATH, window.location.origin);
     loginUrl.searchParams.set('next', GAME_PATH);
     window.location.assign(loginUrl.href);
   };
 
-  const goToGame = () => window.location.assign(GAME_PATH);
+  const goToGame = () => window.location.assign(GAME_URL);
+
+  const updateAuthControls = (user) => {
+    document.querySelectorAll('#openLoginBtn, #mobileLoginBtn').forEach((control) => {
+      control.textContent = user ? 'Logout' : 'Login';
+      control.dataset.authAction = user ? 'logout' : 'login';
+      control.setAttribute('aria-label', user ? 'Log out' : 'Log in');
+    });
+  };
 
   const waitForUser = () => new Promise((resolve) => {
     if (!auth) {
@@ -149,7 +153,7 @@
     renderLoginState({ message: 'Checking your Firebase session...' });
     auth.onAuthStateChanged((user) => {
       if (user) {
-        window.location.assign(getSafeNext());
+        goToGame();
         return;
       }
       renderLoginState({ message: document.body.dataset.authMode === 'signup' ? 'Create your account to enter the game.' : 'Log in to continue to the game.' });
@@ -220,6 +224,11 @@
     });
   };
 
+  const setupSessionControls = () => {
+    if (!auth) return;
+    auth.onAuthStateChanged(updateAuthControls);
+  };
+
   const bindNavigation = () => {
     document.addEventListener('click', (event) => {
       const control = event.target.closest('a, button');
@@ -227,7 +236,11 @@
 
       if (control.id === 'openLoginBtn' || control.id === 'mobileLoginBtn') {
         event.preventDefault();
-        goToLogin();
+        if (control.dataset.authAction === 'logout') {
+          auth.signOut().then(() => window.location.assign('/'));
+        } else {
+          goToLogin();
+        }
         return;
       }
 
@@ -239,6 +252,7 @@
 
   window.FirebaseAuthFlow = { goToLogin, requestGameAccess };
   bindNavigation();
+  setupSessionControls();
   setupLoginPage();
   setupGameGuard();
 })();

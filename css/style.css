@@ -1812,6 +1812,19 @@ button {
   background: linear-gradient(135deg, #edf5ff 0%, #fbfcfe 52%, #fff7ed 100%);
 }
 
+/* Enrollment and payment are paused. Keep all entry points unavailable until
+   the payment flow is intentionally re-enabled. */
+#enrollModal,
+#pricing,
+#headerEnrollBtn,
+#mobileEnrollBtn,
+#finalEnrollBtn,
+#finalPageEnrollBtn,
+#pricingCtaEnroll,
+#quizToEnrollBtn {
+  display: none !important;
+}
+
 .auth-page-shell {
   width: min(100% - 32px, 520px);
   min-height: 100vh;
