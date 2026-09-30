@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in securely before entering the Intellia360 Tug of War game.">
+  <title>Sign In | Intellia360 Tug of War</title>
+  <link rel="icon" type="image/jpeg" href="assets/logo/intellia360-logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+  <main class="auth-page-shell">
+    <a href="/" class="auth-brand" aria-label="Back to Intellia360 home">
+      <img src="assets/logo/intellia360-logo.jpg" alt="Intellia360" class="auth-brand-logo">
+    </a>
+    <section class="auth-card" aria-labelledby="auth-title">
+      <span class="section-pill-tag">SECURE GAME ACCESS</span>
+      <h1 id="auth-title">Sign in to play</h1>
+      <p class="auth-card-copy">Firebase checks your account before you enter the arena. After sign-in, you will return to the game automatically.</p>
+      <p class="auth-status" data-auth-status role="status">Checking your Firebase session...</p>
+      <button type="button" class="btn-pill btn-blue auth-login-button" data-firebase-login>Continue with Google</button>
+      <a class="auth-back-link" href="/">Back to landing page</a>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth-flow.js"></script>
+</body>
+</html>

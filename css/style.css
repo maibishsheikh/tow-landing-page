@@ -1805,3 +1805,98 @@ button {
 .demo-stats div { flex: 1; text-align: center; background: var(--bg-subtle); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 10px; font-size: .8rem; color: var(--text-muted); }
 .demo-stats b { display: block; font-family: var(--font-mono); font-size: 1.3rem; color: var(--brand-navy); }
 .demo-reset { margin-top: 14px; text-align: center; }
+
+/* Firebase sign-in surface */
+.auth-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #edf5ff 0%, #fbfcfe 52%, #fff7ed 100%);
+}
+
+.auth-page-shell {
+  width: min(100% - 32px, 520px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 48px 0;
+  display: grid;
+  align-content: center;
+  gap: 24px;
+}
+
+.auth-brand {
+  justify-self: center;
+}
+
+.auth-brand-logo {
+  width: 172px;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.auth-card {
+  padding: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card-hover);
+  text-align: center;
+}
+
+.auth-card h1 {
+  margin-top: 16px;
+  color: var(--brand-navy);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 7vw, 3rem);
+  line-height: 1.05;
+}
+
+.auth-card-copy {
+  margin: 16px auto 24px;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+}
+
+.auth-status {
+  min-height: 48px;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--brand-blue-border);
+  border-radius: var(--radius-sm);
+  background: var(--brand-blue-soft);
+  color: var(--brand-blue-hover);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.auth-status[data-tone='error'] {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.auth-login-button {
+  width: 100%;
+}
+
+.auth-login-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.auth-back-link {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--brand-blue);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+@media (max-width: 540px) {
+  .auth-page-shell {
+    width: min(100% - 24px, 520px);
+    padding: 24px 0;
+  }
+
+  .auth-card {
+    padding: 28px 20px;
+  }
+}

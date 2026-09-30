@@ -1,5 +1,11 @@
 {
   "framework": null,
   "buildCommand": null,
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "routes": [
+    { "src": "/login", "dest": "/login.html" },
+    { "src": "/game", "dest": "/tug-of-war.html" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }

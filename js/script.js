@@ -591,6 +591,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitLoginBtn = document.getElementById('submitLoginBtn');
 
   const openLogin = () => {
+    if (window.FirebaseAuthFlow) {
+      window.FirebaseAuthFlow.goToLogin();
+      return;
+    }
     if (!loginModal) return;
     loginModal.classList.add('active');
     document.body.style.overflow = 'hidden';

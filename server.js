@@ -177,6 +177,16 @@ app.post('/api/webhook', (req, res) => {
   }
 });
 
+// Auth entry points. Firebase performs the client-side session check, while
+// these routes keep the browser URL stable across local and Vercel hosting.
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'login.html'));
+});
+
+app.get('/game', (req, res) => {
+  res.sendFile(path.join(__dirname, 'tug-of-war.html'));
+});
+
 // Fallback to index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));

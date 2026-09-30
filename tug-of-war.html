@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-protected-game="true">
   <header class="site-nav-header" id="siteHeader">
     <div class="container nav-container">
       <a href="index.html" class="nav-logo-link" aria-label="Intellia360 Home">
@@ -281,6 +281,10 @@
   <div id="toastContainer" style="position: fixed; bottom: 24px; right: 24px; z-index: 3000;"></div>
 
   
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth-flow.js"></script>
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="js/razorpay-config.js"></script>
   <script src="js/script.js"></script>
