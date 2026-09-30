@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Intellia360 Tug of War: a 3D rope battle where correct maths answers pull the rope to your side. Solo vs Sparky Bot or 2-Player.">
+  <title>Intellia360 | Tug of War: Math Battle</title>
+  <link rel="icon" type="image/jpeg" href="assets/logo/intellia360-logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-nav-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo-link" aria-label="Intellia360 Home">
+        <img src="assets/logo/intellia360-logo.jpg" alt="Intellia360" class="nav-logo-img">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu-list">
+          <li><a href="index.html" class="nav-item-link active">Home</a></li>
+          <li><a href="index.html#why" class="nav-item-link">Why Tug of War</a></li>
+          <li><a href="tug-of-war.html" class="nav-item-link">The Game</a></li>
+          <li><a href="index.html#pathway" class="nav-item-link">How It Works</a></li>
+          <li><a href="index.html#faq" class="nav-item-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions -->
+      <div class="nav-actions-right">
+        <button type="button" class="btn-ghost-nav" id="openLoginBtn">Login</button>
+        <button type="button" class="btn-pill btn-orange" id="headerEnrollBtn">Enroll Now</button>
+        <button type="button" class="mobile-hamburger-btn" id="mobileMenuBtn" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobileDrawer" aria-hidden="true">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#why">Why Tug of War</a></li>
+        <li><a href="tug-of-war.html">The Game</a></li>
+        <li><a href="index.html#pathway">How It Works</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <button type="button" class="btn-pill btn-white-border" id="mobileLoginBtn">Login</button>
+        <button type="button" class="btn-pill btn-orange" id="mobileEnrollBtn">Enroll Now</button>
+      </div>
+    </div>
+  </header>
+  <main>
+<section class="hero-clean-section" id="hero">
+<div class="hero-floaters"><span style="top:12%;left:6%">➕</span><span style="top:20%;right:44%;animation-delay:1.5s">✖️</span><span style="bottom:14%;left:10%;animation-delay:2.5s">➗</span><span style="bottom:22%;right:6%;animation-delay:3.5s">⭐</span></div>
+<div class="container hero-layout-grid"><div class="hero-left-content">
+<div class="hero-pill-badge"><span class="hero-pill-dot"></span><span>Grades 3–8 &bull; Solo or 2-Player &bull; 3-Minute Matches</span></div>
+<h1 class="hero-heading">TUG OF WAR,<br><span class="hero-brand-blue">MATH BATTLE.</span></h1>
+<h2 class="hero-subheading">Solve Fast. Pull Harder.<br>Win the Rope.</h2>
+<p class="hero-paragraph">Every correct answer pulls the rope toward your team. Battle Sparky Bot or a friend across six maths stages, from addition to algebra.</p>
+<div class="hero-cta-row"><button type="button" class="btn-pill btn-orange" id="heroStartChallengeBtn">PLAY A FREE ROUND &rarr;</button>
+<a href="tug-of-war.html" class="btn-pill btn-white-border">EXPLORE THE GAME</a></div></div>
+<div class="hero-visual-frame"><div class="hero-image-wrap"><img src="assets/images/hero_battle.jpg" alt="Two students racing to solve maths problems in a Tug of War battle with a holographic rope scoreboard" class="hero-main-img" width="580" height="435"></div>
+<div class="hero-floating-hud"><div class="hud-title">🔥 3X COMBO! +150</div><div class="hud-items">Solve &bull; Pull &bull; Win</div></div></div></div></section>
+<section class="value-strip-section" aria-label="Game Highlights"><div class="container"><div class="value-strip-card"><div class="value-strip-item"><div class="value-icon-circle">🎓</div><div><div class="value-item-title">Grades 3–8</div><div class="value-item-sub">Age Appropriate</div></div></div><div class="value-strip-item"><div class="value-icon-circle">🏟️</div><div><div class="value-item-title">6 Stages</div><div class="value-item-sub">Campaign Levels</div></div></div><div class="value-strip-item"><div class="value-icon-circle">👥</div><div><div class="value-item-title">1P or 2P</div><div class="value-item-sub">Vs Bot or a Friend</div></div></div><div class="value-strip-item"><div class="value-icon-circle">⏱️</div><div><div class="value-item-title">3-Minute</div><div class="value-item-sub">Match Timer</div></div></div></div></div></section>
+<section class="section-spacious" id="why" style="background:#ffffff;"><div class="container"><div class="section-header-center"><span class="section-pill-tag">WHY IT WORKS</span><h2 class="section-main-heading">Why Tug of War?</h2><p class="section-sub-desc">Practice feels like a match, not a worksheet. Players stay focused because the rope is always moving.</p></div><div class="why-cards-grid"><div class="why-minimal-card"><div class="why-icon-box icon-box-rose"><span>⚡</span></div><h3 class="why-card-h3">Think Fast Under Pressure</h3><p class="why-card-p">A 25-second clock on every question turns quick recall into a habit.</p></div><div class="why-minimal-card"><div class="why-icon-box icon-box-amber"><span>🎯</span></div><h3 class="why-card-h3">Practise Every Topic</h3><p class="why-card-p">Six stages travel from addition to order of operations, powers, geometry and algebra.</p></div><div class="why-minimal-card"><div class="why-icon-box icon-box-green"><span>💪</span></div><h3 class="why-card-h3">Mistakes Don't Cost the Rope</h3><p class="why-card-p">A wrong answer only resets your combo. The game cheers you on to try again.</p></div></div></div></section>
+<section class="section-spacious" id="pathway"><div class="container"><div class="section-header-center"><span class="section-pill-tag">HOW A BATTLE WORKS</span><h2 class="section-main-heading">Choose &rarr; Solve &rarr; Pull &rarr; Win &rarr; Star Up</h2><p class="section-sub-desc">One simple loop, repeated across six stages.</p></div><div class="pathway-horizontal-flow"><div class="pathway-step-card"><div class="pathway-step-num">1</div><div class="pathway-icon-large">🏟️</div><h3 class="pathway-step-title">Choose</h3><p class="pathway-step-sub">Stage &amp; Difficulty</p></div><div class="pathway-arrow-sep">&rarr;</div><div class="pathway-step-card"><div class="pathway-step-num">2</div><div class="pathway-icon-large">🧮</div><h3 class="pathway-step-title">Solve</h3><p class="pathway-step-sub">25-Second Clock</p></div><div class="pathway-arrow-sep">&rarr;</div><div class="pathway-step-card"><div class="pathway-step-num">3</div><div class="pathway-icon-large">🪢</div><h3 class="pathway-step-title">Pull</h3><p class="pathway-step-sub">1/5 Rope per Answer</p></div><div class="pathway-arrow-sep">&rarr;</div><div class="pathway-step-card"><div class="pathway-step-num">4</div><div class="pathway-icon-large">🏆</div><h3 class="pathway-step-title">Win</h3><p class="pathway-step-sub">Cross the Line</p></div><div class="pathway-arrow-sep">&rarr;</div><div class="pathway-step-card"><div class="pathway-step-num">5</div><div class="pathway-icon-large">⭐</div><h3 class="pathway-step-title">Star Up</h3><p class="pathway-step-sub">Up to 3 Stars</p></div></div></div></section>
+<section class="section-spacious" id="demo" style="background:#ffffff;"><div class="container"><div class="section-header-center"><span class="section-pill-tag">TRY A ROUND</span><h2 class="section-main-heading">See the Rope Move</h2><p class="section-sub-desc">Pick a stage, answer the question, and watch the flag pull toward Team Blue.</p></div><div class="demo-showcase-box"><div class="demo-tabs-row"><button type="button" class="demo-pill-tab active" data-round="s1">Stage 1</button><button type="button" class="demo-pill-tab" data-round="s2">Stage 2</button><button type="button" class="demo-pill-tab" data-round="s3">Stage 3</button><button type="button" class="demo-pill-tab" data-round="s5">Stage 5</button></div>
+<div class="demo-split-display"><div class="demo-left-calc"><div class="calc-title-label" id="demoStageLabel">Stage 1</div><div class="calc-display-digits" id="demoCurrentProblem"></div>
+<div class="demo-options" id="demoOptions"></div><div class="demo-feedback" id="demoFeedback"></div></div>
+<div class="demo-right-comparison"><div class="rope-panel" id="demoRope"><div class="rope-teams"><span class="tb">🔵 Team Blue (You)</span><span class="ty">Team Yellow 🟡</span></div><div class="rope-track"><div class="rope-line"></div><i style="left:0%"></i><i style="left:10%"></i><i style="left:20%"></i><i style="left:30%"></i><i style="left:40%"></i><i style="left:50%"></i><i style="left:60%"></i><i style="left:70%"></i><i style="left:80%"></i><i style="left:90%"></i><i style="left:100%"></i><span class="rope-flag">🏁</span><div class="rope-marker">🚩</div></div><div class="rope-foot"><span>Pull the flag to your edge to win</span><b class="rope-notch-count">0 / 5</b></div></div><div class="demo-stats"><div>Streak<b id="demoStreak">0</b></div><div>Score<b id="demoScore">0</b></div></div>
+<div class="demo-reset"><button type="button" class="btn-pill btn-white-border" id="demoResetBtn" style="padding:6px 18px;font-size:0.85rem;">Reset Round</button></div></div></div>
+<div class="demo-revealed-steps"><div class="step-box-item active" id="demoS1"><div class="step-indicator-title">Step 1: Read</div><div class="step-formula-code" id="demoFormula1"></div></div><div class="step-box-item" id="demoS2"><div class="step-indicator-title">Step 2: Answer</div><div class="step-formula-code" id="demoFormula2"></div></div><div class="step-box-item" id="demoS3"><div class="step-indicator-title">Step 3: Pull the Rope</div><div class="step-formula-code" id="demoFormula3"></div></div><div class="step-box-item" id="demoS4"><div class="step-indicator-title">Step 4: Score</div><div class="step-formula-code" id="demoFormula4"></div></div></div></div>
+<div style="text-align:center;margin-top:48px;"><a href="tug-of-war.html" class="btn-pill btn-blue">View All 6 Stages &amp; Game Modes &rarr;</a></div></div></section>
+<section class="section-spacious" id="faq"><div class="container"><div class="section-header-center"><span class="section-pill-tag">HAVE QUESTIONS?</span><h2 class="section-main-heading">Frequently Asked Questions</h2><p class="section-sub-desc">Quick answers about how a match works.</p></div><div class="faq-two-col-grid"><div style="display: flex; flex-direction: column; gap: 16px;"><div class="faq-card-item active"><button type="button" class="faq-trigger-btn"><span>What is Tug of War: Math Battle?</span><span class="faq-icon-toggle">&minus;</span></button><div class="faq-content-drawer"><p>A fast 3D rope battle where every correct maths answer pulls the rope toward your team. Solve quickly and accurately to drag the flag across to your side.</p></div></div><div class="faq-card-item"><button type="button" class="faq-trigger-btn"><span>Who is it for?</span><span class="faq-icon-toggle">&plus;</span></button><div class="faq-content-drawer"><p>It is designed for Grades 3–8. Choose Easy, Medium or Hard so the numbers fit the player, and jump into any of the six stages.</p></div></div><div class="faq-card-item"><button type="button" class="faq-trigger-btn"><span>How do you win a match?</span><span class="faq-icon-toggle">&plus;</span></button><div class="faq-content-drawer"><p>Each correct answer moves the rope one-fifth of the way. Reach your edge to win instantly. If the 3-minute timer ends first, the team that is ahead wins, and a tie is a draw.</p></div></div></div><div style="display: flex; flex-direction: column; gap: 16px;"><div class="faq-card-item"><button type="button" class="faq-trigger-btn"><span>What if I get an answer wrong or run out of time?</span><span class="faq-icon-toggle">&plus;</span></button><div class="faq-content-drawer"><p>A wrong answer never pushes the rope backwards; it just resets your streak. If the 25-second question clock runs out, you simply get a fresh question.</p></div></div><div class="faq-card-item"><button type="button" class="faq-trigger-btn"><span>Can I play with a friend?</span><span class="faq-icon-toggle">&plus;</span></button><div class="faq-content-drawer"><p>Yes. Play 1P vs Sparky Bot, or switch to 2-Player and share one screen. Answer with a keyboard or the on-screen number pad.</p></div></div><div class="faq-card-item"><button type="button" class="faq-trigger-btn"><span>How do points, combos and stars work?</span><span class="faq-icon-toggle">&plus;</span></button><div class="faq-content-drawer"><p>Every correct answer earns 100 points plus bonus points for streaks. Win a stage to earn 1 to 3 stars: 85% accuracy or more earns 3 stars, and 65% or more earns 2.</p></div></div></div></div></div></section>
+<section class="section-spacious"><div class="container"><div class="final-cta-container"><div class="final-cta-inner-grid">
+<div class="final-cta-left"><h2 class="final-cta-heading">Pull. Solve. Win the Rope.</h2><p class="final-cta-sub">Turn every practice question into a pull on the rope.</p>
+<div class="final-cta-btn-row"><button type="button" class="btn-pill btn-orange" id="finalStartChallengeBtn">PLAY A FREE ROUND &rarr;</button><button type="button" class="btn-pill btn-white-border" id="finalEnrollBtn" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: #ffffff;">ENROLL NOW</button></div></div>
+<div class="final-cta-right"><img src="assets/images/cta_champion.jpg" alt="Excited student celebrating a Tug of War win" class="cta-character-img"></div></div></div></div></section>
+  </main>
+  <footer class="site-footer-clean">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand -->
+        <div class="footer-brand-wrap">
+          <a href="index.html" aria-label="Intellia360">
+            <img src="assets/logo/intellia360-logo.jpg" alt="Intellia360" class="footer-logo-img">
+          </a>
+          <p class="footer-mission-text">Intellia360 turns practice into play. Tug of War is a fast, friendly rope battle that builds mental maths for learners in Grades 3–8.</p>
+          <div class="footer-social-row">
+            <a href="#" class="footer-social-circle" aria-label="Facebook">FB</a>
+            <a href="#" class="footer-social-circle" aria-label="Instagram">IG</a>
+            <a href="#" class="footer-social-circle" aria-label="LinkedIn">IN</a>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <h4 class="footer-nav-col-title">Navigation</h4>
+          <ul class="footer-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#why">Why Tug of War</a></li>
+            <li><a href="tug-of-war.html">The Game</a></li>
+            <li><a href="index.html#pathway">How It Works</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Courses -->
+        <div>
+          <h4 class="footer-nav-col-title">Programs</h4>
+          <ul class="footer-nav-links"><li><a href="tug-of-war.html#stages">6 Battle Stages</a></li><li><a href="tug-of-war.html#levels">Easy • Medium • Hard</a></li><li><a href="tug-of-war.html#bot">1P vs Bot &amp; 2-Player</a></li><li><a href="tug-of-war.html#pricing">Pricing</a></li></ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h4 class="footer-nav-col-title">Support</h4>
+          <ul class="footer-nav-links">
+            <li><a href="mailto:support@intellia360.com">Contact Us</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 Intellia360. All rights reserved.</div>
+        <div style="font-weight: 600; color: var(--brand-navy);">Build Age Smarter. Brighten Tomorrow.</div>
+      </div>
+    </div>
+  </footer>
+  <!-- ENROLLMENT FLOW MODAL (5-Step Wizard) -->
+  <div class="modal-overlay-backdrop" id="enrollModal" aria-hidden="true" role="dialog" aria-labelledby="enrollTitle">
+    <div class="modal-content-window">
+      <button type="button" class="modal-x-close" id="closeEnrollModal" aria-label="Close">&times;</button>
+      
+      <div id="enrollStep1" class="enroll-pane active">
+        <h3 class="section-main-heading" style="font-size: 1.8rem; margin-bottom: 8px;" id="enrollTitle">Choose Your Child's Grade</h3>
+        <p class="section-sub-desc" style="margin-bottom: 24px;">Tell us the grade so we can set up the right account.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 28px;">
+          <button type="button" class="btn-pill btn-white-border grade-select-btn" data-grade="Grade 3">Grade 3</button>
+          <button type="button" class="btn-pill btn-white-border grade-select-btn" data-grade="Grade 4">Grade 4</button>
+          <button type="button" class="btn-pill btn-orange grade-select-btn selected" data-grade="Grade 5">Grade 5</button>
+          <button type="button" class="btn-pill btn-white-border grade-select-btn" data-grade="Grade 6">Grade 6</button>
+          <button type="button" class="btn-pill btn-white-border grade-select-btn" data-grade="Grade 7">Grade 7</button>
+          <button type="button" class="btn-pill btn-white-border grade-select-btn" data-grade="Grade 8">Grade 8</button>
+        </div>
+
+        <div style="text-align: right;">
+          <button type="button" class="btn-pill btn-blue" id="toStep2Btn">Continue to Account &rarr;</button>
+        </div>
+      </div>
+
+      <div id="enrollStep2" class="enroll-pane" style="display: none;">
+        <h3 class="section-main-heading" style="font-size: 1.8rem; margin-bottom: 8px;">Create Student Profile</h3>
+        <p class="section-sub-desc" style="margin-bottom: 20px;">Create the student profile for this account.</p>
+        
+        <div class="form-field-group">
+          <label class="form-label" for="studentNameInput">Student Name</label>
+          <input type="text" id="studentNameInput" class="form-text-input" placeholder="e.g. Aarav Sharma" required>
+        </div>
+        <div class="form-field-group">
+          <label class="form-label" for="parentContactInput">Parent Email or Mobile</label>
+          <input type="text" id="parentContactInput" class="form-text-input" placeholder="parent@gmail.com" required>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+          <button type="button" class="btn-pill btn-white-border" id="backToStep1Btn">&larr; Back</button>
+          <button type="button" class="btn-pill btn-blue" id="toStep3Btn">Select Plan &rarr;</button>
+        </div>
+      </div>
+
+      <div id="enrollStep3" class="enroll-pane" style="display: none;">
+        <h3 class="section-main-heading" style="font-size: 1.8rem; margin-bottom: 8px;">Selected Plan</h3>
+        <p class="section-sub-desc" style="margin-bottom: 20px;">Full annual access to Tug of War: Math Battle.</p>
+        
+        <div style="background: var(--brand-blue-soft); border: 1.5px solid var(--brand-blue); border-radius: var(--radius-md); padding: 20px; margin-bottom: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <strong style="font-size: 1.2rem; color: var(--brand-navy);">Tug of War Annual Pass</strong>
+            <span style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 900; color: var(--brand-navy);"><span data-price>₹999</span> <small style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">/ year</small></span>
+          </div>
+          <small style="color: #16a34a; font-weight: 700;">✓ Save <span data-save>₹1,000</span> Today (Original: <span data-original>₹1,999</span>)</small>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+          <button type="button" class="btn-pill btn-white-border" id="backToStep2Btn">&larr; Back</button>
+          <button type="button" class="btn-pill btn-orange" id="completePaymentBtn">Complete Payment &rarr;</button>
+        </div>
+      </div>
+
+      <div id="enrollStep4" class="enroll-pane" style="display: none; text-align: center; padding: 20px 0;">
+        <div style="font-size: 3.5rem; margin-bottom: 12px;">🎉</div>
+        <h3 class="section-main-heading" style="font-size: 1.8rem; color: #16a34a; margin-bottom: 8px;">Welcome to Intellia360!</h3>
+        <p class="section-sub-desc" style="margin-bottom: 20px;">Your enrollment is confirmed! All 6 battle stages are unlocked.</p>
+        
+        <!-- Live Payment Receipt Details -->
+        <div style="background: var(--bg-subtle); border: 1.5px solid var(--border-card); border-radius: var(--radius-md); padding: 16px 20px; margin-bottom: 24px; font-size: 0.9rem; text-align: left; max-width: 480px; margin-left: auto; margin-right: auto;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="color: var(--text-muted);">Payment ID:</span>
+            <strong id="receiptPaymentId" style="font-family: var(--font-mono); color: var(--brand-blue); word-break: break-all;">pay_pending</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="color: var(--text-muted);">Student Name:</span>
+            <strong id="receiptStudentName" style="color: var(--brand-navy);">Aarav Sharma</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="color: var(--text-muted);">Program:</span>
+            <span style="font-weight: 600; color: var(--brand-navy);">Tug of War (Annual)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-top: 1px dashed var(--border-card); padding-top: 8px; margin-top: 8px;">
+            <span style="color: var(--text-muted);">Amount Paid:</span>
+            <strong style="color: #16a34a; font-size: 1.05rem;"><span data-price>₹999</span> (Paid via Razorpay)</strong>
+          </div>
+        </div>
+
+        <button type="button" class="btn-pill btn-blue" id="finishEnrollModalBtn" style="padding: 12px 32px;">Launch Student Portal &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 30-SECOND VEDIC CHALLENGE MODAL -->
+  <div class="modal-overlay-backdrop" id="challengeModal" aria-hidden="true" role="dialog" aria-labelledby="quizTitle">
+    <div class="modal-content-window" style="max-width: 540px;">
+      <button type="button" class="modal-x-close" id="closeChallengeModal" aria-label="Close">&times;</button>
+      
+      <div id="quizContainer">
+        <div style="text-align: center; margin-bottom: 20px;">
+          <span class="section-pill-tag">QUICK BATTLE ROUND</span>
+          <h3 class="section-main-heading" style="font-size: 1.6rem; margin-bottom: 6px;" id="quizTitle">Beat the Clock</h3>
+          <div style="font-family: var(--font-mono); font-size: 1.1rem; color: #dc2626; font-weight: 800;">Time Remaining: <span id="quizTimer">25s</span></div>
+        </div>
+
+        <div style="background: var(--brand-navy); color: #ffffff; border-radius: var(--radius-md); padding: 24px; text-align: center; margin-bottom: 20px;">
+          <div style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 6px;" id="quizQNum">Question 1 of 3</div>
+          <div style="font-family: var(--font-mono); font-size: 2.4rem; font-weight: 800; margin-bottom: 8px;" id="quizProblem">15 + 28 = ?</div>
+          <small style="color: #f59e0b;" id="quizTip">💡 Hint: add the tens first, then the ones.</small>
+        </div>
+
+        <div class="rope-panel" id="quizRope"><div class="rope-teams"><span class="tb">🔵 Team Blue (You)</span><span class="ty">Team Yellow 🟡</span></div><div class="rope-track"><div class="rope-line"></div><i style="left:0%"></i><i style="left:10%"></i><i style="left:20%"></i><i style="left:30%"></i><i style="left:40%"></i><i style="left:50%"></i><i style="left:60%"></i><i style="left:70%"></i><i style="left:80%"></i><i style="left:90%"></i><i style="left:100%"></i><span class="rope-flag">🏁</span><div class="rope-marker">🚩</div></div><div class="rope-foot"><span>Pull the flag to your edge to win</span><b class="rope-notch-count">0 / 5</b></div></div><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0;" id="quizOptions"></div>
+        <div id="quizFeedback" style="display: none; padding: 10px; border-radius: var(--radius-sm); text-align: center; font-weight: 700; font-size: 0.9rem;"></div>
+      </div>
+
+      <div id="quizResults" style="display: none; text-align: center; padding: 20px 0;">
+        <div style="font-size: 3.5rem; margin-bottom: 8px;">🏆</div>
+        <h4 class="section-main-heading" style="font-size: 1.6rem; margin-bottom: 6px;">Challenge Completed!</h4>
+        <p style="font-size: 1.2rem; font-weight: 800; color: var(--brand-blue); margin-bottom: 8px;" id="resScoreText">You scored 3/3!</p>
+        <p class="section-sub-desc" style="margin-bottom: 24px;">Every right answer pulls the rope one notch your way.</p>
+        <button type="button" class="btn-pill btn-orange" id="quizToEnrollBtn">Enroll to Play All 6 Stages &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal-overlay-backdrop" id="loginModal" aria-hidden="true" role="dialog" aria-labelledby="loginTitle">
+    <div class="modal-content-window" style="max-width: 440px;">
+      <button type="button" class="modal-x-close" id="closeLoginModal" aria-label="Close">&times;</button>
+      <div style="text-align: center; margin-bottom: 24px;">
+        <img src="assets/logo/intellia360-logo.jpg" alt="Intellia360" style="height: 48px; margin: 0 auto 12px auto;">
+        <h3 class="section-main-heading" style="font-size: 1.5rem; margin-bottom: 4px;" id="loginTitle">Student Portal Login</h3>
+        <p class="section-sub-desc">Continue your Tug of War journey</p>
+      </div>
+
+      <form onsubmit="return false;">
+        <div class="form-field-group">
+          <label class="form-label" for="loginEmail">Registered Mobile or Email</label>
+          <input type="text" id="loginEmail" class="form-text-input" placeholder="e.g. 9876543210" required>
+        </div>
+        <div class="form-field-group">
+          <label class="form-label" for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" class="form-text-input" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn-pill btn-blue" id="submitLoginBtn" style="width: 100%; margin-top: 8px;">Log In &rarr;</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toastContainer" style="position: fixed; bottom: 24px; right: 24px; z-index: 3000;"></div>
+
+  
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="js/razorpay-config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
