@@ -232,6 +232,43 @@ button {
   background: var(--brand-blue-soft);
 }
 
+.btn-green {
+  background: #10b981;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.28);
+}
+
+.btn-green:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(16, 185, 129, 0.42);
+}
+
+.btn-purple {
+  background: #8b5cf6;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.28);
+}
+
+.btn-purple:hover {
+  background: #7c3aed;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(139, 92, 246, 0.42);
+}
+
+.btn-pill-nav-play {
+  background: linear-gradient(135deg, #f59320 0%, #ea580c 100%);
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(245, 147, 32, 0.35);
+  padding: 9px 20px;
+  font-size: 0.88rem;
+}
+
+.btn-pill-nav-play:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245, 147, 32, 0.5);
+}
+
 /* ==========================================================================
    2. NAVBAR (Significantly larger logo, clean spacing)
    ========================================================================== */

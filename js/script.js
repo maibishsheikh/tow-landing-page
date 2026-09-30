@@ -442,7 +442,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (finishEnrollModalBtn) {
     finishEnrollModalBtn.addEventListener('click', () => {
       closeEnroll();
-      showToast('Welcome to Intellia360! Dashboard loaded.');
+      showToast('Welcome to Intellia360! Launching Game Arena...');
+      window.open('https://tug-of-war-hazel.vercel.app/', '_blank');
     });
   }
 
@@ -614,7 +615,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         submitLoginBtn.textContent = 'Log In →';
         closeLogin();
-        showToast('✓ Welcome back! Student Portal loaded.');
+        showToast('✓ Welcome back! Launching Game Arena...');
+        window.open('https://tug-of-war-hazel.vercel.app/', '_blank');
       }, 800);
     });
   }
