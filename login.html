@@ -18,10 +18,23 @@
     </a>
     <section class="auth-card" aria-labelledby="auth-title">
       <span class="section-pill-tag">SECURE GAME ACCESS</span>
-      <h1 id="auth-title">Sign in to play</h1>
-      <p class="auth-card-copy">Firebase checks your account before you enter the arena. After sign-in, you will return to the game automatically.</p>
+      <h1 id="auth-title">Enter the arena</h1>
+      <p class="auth-card-copy">Create an account or log in. Firebase confirms your account before the game opens.</p>
       <p class="auth-status" data-auth-status role="status">Checking your Firebase session...</p>
-      <button type="button" class="btn-pill btn-blue auth-login-button" data-firebase-login>Continue with Google</button>
+      <div class="auth-mode-toggle" role="tablist" aria-label="Authentication mode">
+        <button type="button" class="auth-mode-button active" data-auth-mode="login" role="tab" aria-selected="true">Log in</button>
+        <button type="button" class="auth-mode-button" data-auth-mode="signup" role="tab" aria-selected="false">Create account</button>
+      </div>
+      <form class="auth-form" data-email-form novalidate>
+        <label class="auth-field-label" for="authEmail">Email address</label>
+        <input class="auth-field-input" id="authEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label class="auth-field-label" for="authPassword">Password</label>
+        <input class="auth-field-input" id="authPassword" name="password" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required>
+        <span class="auth-password-hint" data-password-hint></span>
+        <button type="submit" class="btn-pill btn-blue auth-login-button" data-email-submit>Log in</button>
+      </form>
+      <div class="auth-divider"><span>or</span></div>
+      <button type="button" class="btn-pill btn-white-border auth-login-button" data-firebase-google>Continue with Google</button>
       <a class="auth-back-link" href="/">Back to landing page</a>
     </section>
   </main>
