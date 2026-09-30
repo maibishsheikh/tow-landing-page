@@ -311,6 +311,13 @@ document.addEventListener('DOMContentLoaded', () => {
       themeColor: '#186fe9'
     };
 
+    // Payments are switched off until a real Razorpay Key ID is added in js/razorpay-config.js.
+    // Visitors see a friendly message instead of a developer error.
+    if (!cfg.keyId || cfg.keyId.includes('YOUR_KEY_ID')) {
+      showToast('Online enrollment is opening soon. Meanwhile, tap "Play Live Game" to try it out!');
+      return;
+    }
+
     if (typeof window.Razorpay === 'undefined') {
       alert('Razorpay Checkout SDK is still loading or blocked by an ad-blocker. Please check your internet connection.');
       return;
@@ -319,10 +326,8 @@ document.addEventListener('DOMContentLoaded', () => {
     completePaymentBtn.disabled = true;
     completePaymentBtn.textContent = 'Launching Checkout...';
 
-    // 3. Try to create order on backend / Vercel Serverless API
+    // 3. Try to create order on backend server if available
     let orderId = null;
-    let effectiveKeyId = cfg.keyId;
-
     try {
       const resp = await fetch('/api/create-order', {
         method: 'POST',
@@ -338,9 +343,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const orderData = await resp.json();
         if (orderData.success && orderData.orderId) {
           orderId = orderData.orderId;
-          if (orderData.keyId) {
-            effectiveKeyId = orderData.keyId;
-          }
           console.log('✓ Secure Order ID created on server:', orderId);
         }
       }
@@ -348,22 +350,9 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Backend server not detected, proceeding with direct client checkout.');
     }
 
-    // Check if keyId is still placeholder and no server key was returned
-    if (!effectiveKeyId || effectiveKeyId.includes('YOUR_KEY_ID')) {
-      completePaymentBtn.disabled = false;
-      completePaymentBtn.textContent = 'Complete Payment →';
-      alert(
-        '⚠️ Razorpay Key ID is not configured yet!\n\n' +
-        '• If deployed on Vercel: Add RAZORPAY_KEY_ID & RAZORPAY_KEY_SECRET in Vercel Project Settings > Environment Variables.\n' +
-        '• Or edit "js/razorpay-config.js" / ".env" locally.'
-      );
-      showToast('⚠️ Please configure Razorpay Key in Vercel or razorpay-config.js');
-      return;
-    }
-
     // 4. Construct Razorpay Options
     const options = {
-      key: effectiveKeyId,
+      key: cfg.keyId,
       amount: cfg.amount * 100, // paise (₹2,999 = 299900 paise)
       currency: cfg.currency || 'INR',
       name: cfg.companyName || 'Intellia360',

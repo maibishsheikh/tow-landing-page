@@ -70,7 +70,7 @@ app.post('/api/create-order', async (req, res) => {
     }
 
     const { studentName, parentContact, grade, amount } = req.body;
-    const orderAmount = (amount || 999) * 100; // in paise (₹999 = 99900 paise)
+    const orderAmount = (amount || 2999) * 100; // in paise (₹2,999 = 299900 paise)
 
     const options = {
       amount: orderAmount,
